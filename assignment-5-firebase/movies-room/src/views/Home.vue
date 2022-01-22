@@ -1,6 +1,6 @@
 <template>
     <Navbar />
-    <Movies :movies="movies"/>
+    <Movies />
 </template>
 
 <script>

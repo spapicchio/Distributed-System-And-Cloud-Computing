@@ -35,9 +35,9 @@ const provider = new GoogleAuthProvider();
                 // The signed-in user info.
                 const user = result.user;
                 
-                console.log(credential);
-                console.log(token);
-                console.log(user);
+                console.log("CREDENTIAL ", credential);
+                console.log("TOKEN ", token);
+                console.log("USER ", user);
                 
                 //put the information of the user inside the sessionStorage
                 sessionStorage.setItem('user', JSON.stringify(user));

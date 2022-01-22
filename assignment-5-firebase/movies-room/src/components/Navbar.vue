@@ -45,7 +45,7 @@ export default {
     methods: {
         iconClick() {
             console.log('Icon clicked')
-            this.$router.push("")
+            this.$router.push("/")
         },
         userClick(){
             console.log('User clicked')
