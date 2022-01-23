@@ -45,11 +45,10 @@ export default {
     methods: {
         iconClick() {
             console.log('Icon clicked')
-            this.$router.push("/")
+            this.$router.push("/home")
         },
         userClick(){
             console.log('User clicked')
-            this.$router.push("")
             
         },
         whishClick(){
@@ -60,7 +59,8 @@ export default {
             console.log('LogOut clicked')
             //remove information ov the user
             sessionStorage.clear()
-            this.$router.push("login")
+
+            this.$router.push("/")
         }
     }
 }

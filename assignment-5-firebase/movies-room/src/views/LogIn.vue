@@ -14,6 +14,7 @@
 <script>
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
+
 const provider = new GoogleAuthProvider();
 
 
@@ -42,8 +43,12 @@ const provider = new GoogleAuthProvider();
                 //put the information of the user inside the sessionStorage
                 sessionStorage.setItem('user', JSON.stringify(user));
 
-                this.$router.push('/')
-            }).catch((error) => {
+                return user;
+            })
+            .then(() => {
+                this.$router.push('/home')
+            })
+            .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 const email = error.email;
