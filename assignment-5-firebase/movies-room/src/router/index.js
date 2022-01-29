@@ -31,11 +31,12 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
 
     let user = JSON.parse(sessionStorage.getItem('user'));
-    //console.log( to.path == '/' && user != null) 
-    //console.log(to.path == '/' && user == null) 
-    //console.log(to.path != '/' && user == null) 
-    //console.log(to.path != '/' && user != null) 
-    //console.log("\n");
+    console.log( to.path == '/' && user != null) 
+    console.log(to.path == '/' && user == null) 
+    console.log(to.path != '/' && user == null) 
+    console.log(to.path != '/' && user != null) 
+    console.log(to.path != '/whish' && to.path != '/' && to.path != '/home') 
+    console.log("\n");
     //console.log(from)
     //console.log(to)
 
@@ -45,8 +46,11 @@ router.beforeEach((to, from, next) => {
     else if ( to.path == '/' && user == null) next()
     // to not login, user null => to login
     else if (to.path != '/' && user == null) next({path: '/', name: 'login'})
+    // not a page in the website
+    else if (to.path != '/whish' && to.path != '/' && to.path != '/home') next({path: "/home"})
     //to not login, user not null => you can go 
     else if (to.path != '/' && user != null) next()
+
 
 
 

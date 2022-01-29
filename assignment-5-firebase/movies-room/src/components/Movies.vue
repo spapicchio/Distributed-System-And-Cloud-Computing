@@ -48,11 +48,11 @@ export default {
             console.log(JSON.stringify(this.movies[0].year))
             console.log(this.input_text)
             return this.movies.filter(movie => {
-                if (JSON.stringify(movie.title).startsWith('"'+this.input_text.trim()))
+                if (JSON.stringify(movie.title).toLowerCase().startsWith('"'+this.input_text.trim().toLowerCase()))
                     return true
-                if (JSON.stringify(movie.year).startsWith(this.input_text.trim()))
+                if (JSON.stringify(movie.year).toLowerCase().startsWith(this.input_text.trim().toLowerCase()))
                     return true
-                if (JSON.stringify(movie.genre).startsWith('"'+this.input_text.trim()))
+                if (JSON.stringify(movie.genre).toLowerCase().startsWith('"'+this.input_text.trim().toLowerCase()))
                     return true
                 if(this.input_text == "")
                     return true
@@ -176,6 +176,9 @@ input{
 table{
     max-width: 60%;
     margin: 0% auto 0% auto;
+    height: 500px;
+    display: block;
+    overflow-y:scroll;
     text-align: left;
     border-collapse: separate;
     border-spacing: 0px 7px;
